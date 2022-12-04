@@ -6207,6 +6207,12 @@ fieldset:disabled .btn {
   }
 }
 
+@media screen and (max-width: 1080px) {
+  .responsive-need-reverse {
+    flex-direction: column-reverse;
+  }
+}
+
 @media (max-width: 1199.98px) {
   .modal-fullscreen-xl-down {
     width: 100vw;
@@ -11905,6 +11911,7 @@ fieldset:disabled .btn {
 
 .aboutme__pic {
   max-width: 100%;
+  /* display: none; */
 }
 
 .illustration-aboutme {
