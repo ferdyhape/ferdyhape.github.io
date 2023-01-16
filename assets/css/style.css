@@ -12216,4 +12216,8 @@ fieldset:disabled .btn {
   display: block;
 }
 
+.main-color {
+  background-color: #9926f0 !important;
+}
+
 /* Style the buttons */
