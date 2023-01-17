@@ -6213,8 +6213,12 @@ fieldset:disabled .btn {
   }
 
   .navbar-nav {
-    padding: 25px 0;
+    margin: 8px 0;
     align-items: center;
+  }
+
+  #navbarNav>ul>li {
+    padding: 5px 0;
   }
 
   #navbarNav>a {
