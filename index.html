@@ -10,9 +10,18 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/fontawesome.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
-  <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="assets/bootstrap-5.2.3-dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="assets/bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/@popperjs/core/dist/umd/popper.min.js"></script>
+  <script src="assets/sweetalert2/dist/sweetalert2.all.min.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+    integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </head>
 
 <body>
@@ -30,7 +39,7 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#aboutme">About Me</a></li>
           <li class="nav-item"><a class="nav-link" href="#org-experience">Organizational Experience</a></li>
           <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
@@ -39,7 +48,7 @@
         <a href="https://wa.me/6287856725286" class="text-decoration-none" target="_blank">
           <button type="button" class="rounded-pill btn-rounded">
             Whatsapp Me
-            <span style="background-color: #9926f0;">
+            <span style="background-color: #47ACEB;">
               <i class="fas fa-phone-alt"></i>
             </span>
           </button>
@@ -55,7 +64,6 @@
   <section id="home" class="intro-section">
     <div class="container">
       <div class="row align-items-center text-white">
-
         <div class="col-md-6 intros text-start">
           <h1 class="display-2">
             <span class="display-2--intro">Hello, I'm Ferdy</span>
@@ -123,6 +131,9 @@
               authority after I attended the Junior Web Developer training organized by BPPTIK (Balai Pelatihan dan
               Pengembangan Teknologi Informasi dan Komunikasi), Kemenkominfo RI.
             </p>
+            <a href="#" class="btn btn-light border-0 shadow text-white main-color btn-certificate"
+              onclick="showCertificate('images/certificate/JWD.jpg', 'Junior Web Developer', 'BNSP Indonesia')">My
+              Certificate</a>
           </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 aboutme mt-4 text-end">
@@ -148,6 +159,9 @@
               certification authority after I attended the Junior Graphic Designer training organized by the Digital
               Talent Scholarship, Kemenkominfo RI.
             </p>
+            <a href="#" class="btn btn-light border-0 shadow text-white main-color btn-certificate"
+              onclick="showCertificate('images/certificate/JGD.jpg', 'Junior Graphic Designer', 'BNSP Indonesia')">My
+              Certificate</a>
           </div>
         </div>
       </div>
@@ -155,12 +169,15 @@
       <div class="row responsive-need-reverse">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 aboutme mt-4">
           <div class="aboutme__content">
-            <h3 class="display-3--title mt-1">Computer Software Programming</h3>
+            <h3 class="display-3--title mt-1">Computer Software Programmer</h3>
             <p class="lh-lg">
               December 2022 I passed the Computer Software Programming certification from the National Professional
               Certification Agency after I took part in the Computer Software Programming Certification held by the
               Malang State Polytechnic Professional Certification Institute.
             </p>
+            <a href="#" class="btn btn-light border-0 shadow text-white main-color btn-certificate"
+              onclick="showCertificate('images/certificate/PSK.jpg', 'Computer Software Programmer', 'BNSP Indonesia')">My
+              Certificate</a>
           </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 aboutme mt-4 text-end">
@@ -186,6 +203,9 @@
               IEEEL INSTITUTE after I attended the CERTIFIED PUBLIC SPEAKING PROFESSIONAL training organized by Welldone
               Skill.
             </p>
+            <a href="#" class="btn btn-light border-0 shadow text-white main-color btn-certificate"
+              onclick="showCertificate('images/certificate/CPSP.jpg', 'Certifed Public Speaking Proffesional', 'IEEEL Institute')">My
+              Certificate</a>
           </div>
         </div>
       </div>
@@ -269,8 +289,12 @@
           <h1 class="display-3 fw-bold text-capitalize">Project Portfolio</h1>
           <div class="heading-line"></div>
           <p class="lead blackquote">
-            "Learning is not just what is learned, but what can be useful"
+            <strong>You can click</strong> on the image portfolio of web app to view project feature details, All web
+            app project
+            uploaded on <a href="https://github.com/ferdyhape" class="text-decoration-none text-dark">my
+              github <i class="fab fa-github"></i></a>
           </p>
+
         </div>
         <div class="row mt-3 mb-4 g-3 text-center myBtnContainer">
           <div class="col-md-12 myBtnContainer">
@@ -283,62 +307,79 @@
         <!-- START THE PORTFOLIO ITEMS  -->
         <div class="row">
           <div class="col-lg-4 col-md-6 filterDiv website">
-            <div class="portfolio-box shadow">
+            <div class="portfolio-box shadow"
+              onclick="detailProject('1', 'https://github.com/ferdyhape/Mail-Archive-Web-App')">
               <img src="images/portfolio/ArsipSurat.jpg" alt="portfolio 1 image" title="portfolio 1 picture"
                 class="img-fluid">
               <div class="portfolio-info">
                 <div class="caption">
-                  <h4>Mail Archive Web App
+                  <h4 id="web-title-1">Mail Archive Web App
                   </h4>
-                  <p>Website</p>
+                  <p>Web App</p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 filterDiv website">
-            <div class="portfolio-box shadow">
+          <div class=" col-lg-4 col-md-6 filterDiv website">
+            <div class="portfolio-box shadow" onclick="detailProject('2', 'https://github.com/ferdyhape/Tubes-DPW')">
               <img src="images/portfolio/Smaripulang.png" alt="portfolio 2 image" title="portfolio 2 picture"
                 class="img-fluid">
               <div class="portfolio-info">
                 <div class="caption">
-                  <h4>School Website</h4>
-                  <p>Website</p>
+                  <h4 id="web-title-2">School Website</h4>
+                  <p>Web App</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 filterDiv website">
-            <div class="portfolio-box shadow">
+            <div class="portfolio-box shadow"
+              onclick="detailProject('3', 'https://github.com/ferdyhape/Tubes-ProjectLaravel')">
               <img src="images/portfolio/e-commerce.png" alt="portfolio 2 image" title="portfolio 2 picture"
                 class="img-fluid">
               <div class="portfolio-info">
                 <div class="caption">
-                  <h4>E-commerce Website</h4>
-                  <p>Website</p>
+                  <h4 id="web-title-3">E-commerce Website</h4>
+                  <p>Web App</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 filterDiv website">
-            <div class="portfolio-box shadow">
+            <div class="portfolio-box shadow"
+              onclick="detailProject('4', 'https://github.com/ferdyhape/Simple-Website')">
               <img src="images/portfolio/bnsp.png" alt="portfolio 3 image" title="portfolio 3 picture"
                 class="img-fluid">
               <div class="portfolio-info">
                 <div class="caption">
-                  <h4>Agency Web</h4>
+                  <h4 id="web-title-4">Agency Web</h4>
                   <p>Website</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 filterDiv website">
-            <div class="portfolio-box shadow">
-              <img src="images/portfolio/technisi.png" alt="portfolio 4 image" title="portfolio 4 picture"
+            <div class="portfolio-box shadow"
+              onclick="detailProject('5', 'https://github.com/ferdyhape/Project-Caffe-Coklat')">
+              <img src="images/portfolio/BrowniesSantri.png" alt="portfolio 4 image" title="portfolio 4 picture"
                 class="img-fluid">
               <div class="portfolio-info">
                 <div class="caption">
-                  <h4>TechNisi</h4>
-                  <p>Website</p>
+                  <h4 id="web-title-5">E-commerce Website</h4>
+                  <p>Web App</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 filterDiv website">
+            <div class="portfolio-box shadow"
+              onclick="detailProject('6', 'https://github.com/ferdyhape/MySQL-Insert-Query-Generator')">
+              <img src="images/portfolio/MySQLInsertGenerator.png" alt="portfolio 4 image" title="portfolio 4 picture"
+                class="img-fluid">
+              <div class="portfolio-info">
+                <div class="caption">
+                  <h4 id="web-title-6">Tools for Generating Queries</h4>
+                  <p>Web App</p>
                 </div>
               </div>
             </div>
@@ -443,35 +484,90 @@
       </div>
     </section>
 
-    <!-- ///////////////////////////////////////////////////////////////////////////////////////////
-                           START SECTION 5 - THE FOOTER  
-///////////////////////////////////////////////////////////////////////////////////////////////-->
-    <footer class="footer">
-      <!-- START THE SOCIAL MEDIA CONTENT  -->
-      <div class="footer-sm">
-        <div class="container">
-          <div class="py-4 d-flex justify-content-between">
-            <div class="text-white fw-bold">
-              Connect With Me!
-            </div>
-            <div class="">
-              <a href="https://github.com/ferdyhape" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="https://www.linkedin.com/in/ferdy-hahan-pradana/" target="_blank"><i
-                  class="fab fa-linkedin"></i></a>
-              <a href="https://instagram.com/ferdyhape" target="_blank"><i class="fab fa-instagram"></i></a>
-              <a href="https://wa.me/6287856725286" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <!-- detail portofolio description -->
+    <p id="desc-1" style="display: none;">A website for archiving incoming and outgoing mail within an organization,
+      where there is a feature for CRUD fonts (including mail preview). This website was built using Laravel 9, PHP 8
+      Technology, Bootstrap 5, MySQL database and Datatables 1.10</p>
+    <p id="desc-2" style="display: none;">This website was created for the purposes of the 2nd semester coding course
+      final project using HTML, CSS, javascript, MySQL Database and PHP. The features of this website are admin login,
+      CRUD student
+      data, and displays pages for school information. In the process I worked on it together with my coding colleagues
+      in a group, me as the frontend and my coding partners as the backend.</p>
+    <p id="desc-3" style="display: none;">This website is made to display a catalog of goods sold in a store, in this
+      web application you can do CRUD item and user data (admin side) and displays the product catalog, print member
+      cards
+      (user side). This website
+      used to be built using Laravel 8, PHP 8, MySQL Database, and Bootstrap 5 technologies.</p>
+    <p id="desc-4" style="display: none;">This is a static website created for the purposes of the Junior Web Developer
+      certification requirements from BNSP Indonesia. This website was built using html, css with the bootstrap css
+      framework. This web feature only displays the following general pages Home, Profile, Certification, Media and
+      Registration.</p>
+    <p id="desc-5" style="display: none;">This website application is a project ordered by my friend for the purposes of
+      selling brownies which are still in the development stage. The features that can already be used are divided into
+      2, namely the ADMIN feature which is login, register, product data crud, crud data category, crud banner for
+      client pages, and CLIENT/USER features which are login, register, and display client pages. This website was built
+      using Laravel 9, Bootstrap 5, Datatable Bootstrap 4, SweetAlert 2, Vite and Jquery technologies.</p>
+    <p id="desc-6" style="display: none;">This website application is made for the purpose of saving time in making
+      insert queries into the MySQL database. The feature on this website is the Insert Query generator, the source of
+      which is obtained from user input from excel data (.xlsx) and the output is a query so that the user only needs to
+      copy. This website application is made using the Python language and Streamlit technology to display a frontend
+      view to the user.</p>
+    <!--  -->
+
+    <!-- modal for project detail -->
+    <div id="myModal" class="modal">
+      <div class="container">
+        <div class="row justify-content-center my-auto">
+          <div class="col-lg-5">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div class="modal-header py-2">
+                <h2 class="my-0 ms-2" id="titleElement"></h2>
+                <span class="close">&times;</span>
+              </div>
+              <div class="modal-body">
+                <div class="container px-4">
+                  <p id="template-feature"></p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <a href="#" class="btn btn-block main-color my-auto text-white ms-2" id="to-repository">Repositories
+                  Link</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- START THE COPYRIGHT INFO  -->
-      <div class="footer-bottom pt-2 pb-2">
-        <div class="container">
-          <div class="row text-center text-white">
-            <div class="col-12">
-              <div class="footer-bottom__copyright">
-                &COPY; Copyright 2022 By <a href="https://github.com/ferdyhape" target="_blank">ferdyhape</a>
+    </div>
+    <!--  -->
+
+    <!-- ///////////////////////////////////////////////////////////////////////////////////////////
+                           START SECTION 5 - THE FOOTER  
+///////////////////////////////////////////////////////////////////////////////////////////////-->
+    <footer class=" footer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#fff" fill-opacity="1"
+          d="M0,96L48,128C96,160,192,224,288,213.3C384,203,480,117,576,117.3C672,117,768,203,864,202.7C960,203,1056,117,1152,117.3C1248,117,1344,203,1392,245.3L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
+        </path>
+      </svg>
+      <!-- START THE SOCIAL MEDIA CONTENT  -->
+      <div class="footer-sm">
+        <!-- START THE COPYRIGHT INFO  -->
+        <div class="footer-bottom pt-2 pb-2">
+          <div class="container">
+            <div class="my-1">
+              <div class="col-lg-3 col-md-4 col-sm-5 col-8 mx-auto">
+                <div class="py-2 d-flex justify-content-center bg-white rounded-pill">
+                  <a href="https://github.com/ferdyhape" target="_blank"><i class="fab fa-github"></i></a>
+                  <a href="https://www.linkedin.com/in/ferdy-hahan-pradana/" target="_blank"><i
+                      class="fab fa-linkedin"></i></a>
+                  <a href="https://instagram.com/ferdyhape" target="_blank"><i class="fab fa-instagram"></i></a>
+                  <a href="https://wa.me/6287856725286" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+              </div>
+              <div class="footer-bottom__copyright my-2 text-center">
+                &COPY; COPYRIGHT 2022 BY <a href=" https://github.com/ferdyhape" target="_blank">FERDYHAPE</a>
               </div>
             </div>
           </div>
@@ -487,7 +583,34 @@
     <!-- ////////////////////////////////////////////////////////////////////////////////////////
                                the SCRIPT USED  
 /////////////////////////////////////////////////////////////////////////////////////////////-->
-    <script src="assets/vendors/js/glightbox.min.js"></script>
+    <script>
+      // Get the modal
+      function detailProject(number, repository) {
+        var modal = document.getElementById("myModal");
+        var templateFeature = document.getElementById("template-feature");
+        var titleElement = document.getElementById("titleElement");
+        var link_repo = document.getElementById("to-repository");
+        var span = document.getElementsByClassName("close")[0];
+        const title = document.getElementById(`web-title-${number}`).textContent;
+        const description = document.getElementById(`desc-${number}`).textContent;
+        link_repo.href = repository;
+        link_repo.target = '_blank';
+        titleElement.innerHTML = title;
+        templateFeature.innerHTML = description;
+
+        modal.style.display = "block";
+        span.onclick = function () {
+          modal.style.display = "none";
+        }
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+      }
+    </script>
+
+    <script src="assets/vendors/glightbox/js/glightbox.min.js"></script>
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -527,17 +650,6 @@
           }
         }
         element.className = arr1.join(" ");
-      }
-
-      // Add active class to the current control button (highlight it)
-      var btnContainer = document.getElementById("myBtnContainer");
-      var btns = btnContainer.getElementsByClassName("btn");
-      for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function () {
-          var current = document.getElementsByClassName("active");
-          current[0].className = current[0].className.replace(" active", "");
-          this.className += " active";
-        });
       }
     </script>
 </body>

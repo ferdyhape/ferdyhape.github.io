@@ -1,7 +1,18 @@
-function showCertificate() {
+function showCertificate(imgSrc, field, by) {
     Swal.fire({
-        title: "<i>Title</i>",
-        html: "Testno  sporocilo za objekt: <b>test</b>",
-        confirmButtonText: "V <u>redu</u>",
+        title: field,
+        text: `Certified by ${by}`,
+        imageUrl: imgSrc,
+        imageWidth: '70%',
+        imageAlt: 'Certificate-Img',
+    })
+}
+
+function test(title, desc) {
+    const element = document.getElementById(desc);
+    Swal.fire({
+        title: `${title}`,
+        html: element.innerHTML,
+        confirmButtonText: "Ok",
     });
 }
